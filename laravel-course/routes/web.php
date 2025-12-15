@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\CarController;
+use App\Http\Controllers\FoodController as FoodControllerAlias;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProductController as ProductC;
 use App\Http\Controllers\ShowCarController;
 use Illuminate\Support\Facades\Route;
 
@@ -83,3 +86,12 @@ Route::get('/car', [CarController::class, 'index']);
 
 Route::get('/car/invokable', CarController::class);
 Route::get('/car', [CarController::class, 'index']);
+
+//Route::resource('/products', ProductC::class);
+// Route::apiResources('/products', ProductControllerAlias::class);
+
+//Route::apiResources('cars', FoodControllerAlias::class);
+Route::apiResources([
+    'food'      => FoodControllerAlias::class ,
+    'products'  => ProductController::class ,
+]);
