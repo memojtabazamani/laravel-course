@@ -2,21 +2,25 @@
 
 use App\Http\Controllers\CarController;
 use App\Http\Controllers\FoodController as FoodControllerAlias;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MathController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductController as ProductC;
 use App\Http\Controllers\ShowCarController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function() {
-    // $aboutPageUrl = '/about';
-    // $aboutPageUrl = route('about');
-    // dd($aboutPageUrl);
+//Route::get('/', function() {
+//    // $aboutPageUrl = '/about';
+//    // $aboutPageUrl = route('about');
+//    // dd($aboutPageUrl);
+//
+//    $productUrl = route('product.detail',
+//        ['id' => 1, 'lang' => 'en']);
+//    dd($productUrl);
+//    return view('welcome');
+//});
 
-    $productUrl = route('product.detail',
-        ['id' => 1, 'lang' => 'en']);
-    dd($productUrl);
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::view('/about', 'about')->name('about');
 
 //Route::get('/product/{id}', function(string $id) {
@@ -73,25 +77,29 @@ Route::fallback(function () {
     return 'Fallback';
 });
 
-Route::get('/sum/{a}/{b}', function (float $a, float $b) {
-    return $a + $b;
-})->whereNumber(['a', 'b']);
+//Route::get('/sum/{a}/{b}', function (float $a, float $b) {
+//    return $a + $b;
+//})->whereNumber(['a', 'b']);
 
-Route::get('/car', [CarController::class, 'index']);
+//Route::get('/car', [CarController::class, 'index']);
 
 //Route::controller(CarController::class)->prefix('car')->group(function () {
 //    Route::get('/car','index');
 //    Route::get('/my-cars','myCars');
 //});
-
-Route::get('/car/invokable', CarController::class);
-Route::get('/car', [CarController::class, 'index']);
+//
+//Route::get('/car/invokable', CarController::class);
+//Route::get('/car', [CarController::class, 'index']);
 
 //Route::resource('/products', ProductC::class);
 // Route::apiResources('/products', ProductControllerAlias::class);
 
 //Route::apiResources('cars', FoodControllerAlias::class);
-Route::apiResources([
-    'food'      => FoodControllerAlias::class ,
-    'products'  => ProductController::class ,
-]);
+//Route::apiResources([
+//    'food'      => FoodControllerAlias::class ,
+//    'products'  => ProductController::class ,
+//]);
+
+//Route::get('sum/{a}/{b}', [MathController::class, 'sum'])->whereNumber(['a', 'b']);
+//Route::get('subtract/{a}/{b}', [MathController::class, 'subtract'])->whereNumber(['a', 'b']);
+
