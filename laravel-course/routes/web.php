@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CarController;
 use App\Http\Controllers\FoodController as FoodControllerAlias;
+use App\Http\Controllers\HelloController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MathController;
 use App\Http\Controllers\ProductController;
@@ -103,3 +104,4 @@ Route::fallback(function () {
 //Route::get('sum/{a}/{b}', [MathController::class, 'sum'])->whereNumber(['a', 'b']);
 //Route::get('subtract/{a}/{b}', [MathController::class, 'subtract'])->whereNumber(['a', 'b']);
 
+Route::get('/hello', [HelloController::class, 'welcome'])->name('hello');
