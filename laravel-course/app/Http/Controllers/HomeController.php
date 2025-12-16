@@ -9,21 +9,6 @@ class HomeController extends Controller
 {
     public function index()
     {
-//        if(!View::exists('index')) {
-//            dump('View does not exist');
-//        }
-//        return View::first(['index', 'home.index']);
-//        return view('home.index',
-//            [
-//                'name' => 'John',
-//                'surname' => 'Doe',
-//            ]
-//        );
-        return view('home.index')
-            ->with('name', 'John')
-            ->with('surname', 'Doe')
-            ->with('job', '<b>Developer</b>')
-            ->with('hobbies', ['Tennis', 'Sport'])
-            ->with('country','uk');
+        return view('home.index');
     }
 }
