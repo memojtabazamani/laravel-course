@@ -1,5 +1,5 @@
 <div @style(
-        'background-color: '.$alert['color']
+        'color:white; padding:15px; background-color: '.$alert['color']
 )>
     {{ $alert['message'] }}
 </div>
