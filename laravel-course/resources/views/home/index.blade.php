@@ -8,3 +8,16 @@
 <p>
     Year: {{ $year }}
 </p>
+<p>
+    {!!  $job  !!}
+</p>
+
+@{{ name }}
+@verbatim
+    <div>
+        Name: {{ name }}
+        Age: {{ age }}
+        Job: {{ job }}
+        Hobbies: {{ hobbies }}
+    </div>
+@endverbatim
