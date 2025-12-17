@@ -20,7 +20,7 @@
             crossorigin="anonymous"
             referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="css/app.css" />
+    <link rel="stylesheet" href="/css/app.css" />
 </head>
 <body @if($cssBodyClass) class="{{ $cssBodyClass }} " @endif>
 
@@ -32,6 +32,6 @@
         crossorigin="anonymous"
         referrerpolicy="no-referrer"
 ></script>
-<script src="js/app.js"></script>
+<script src="/js/app.js"></script>
 </body>
 </html>

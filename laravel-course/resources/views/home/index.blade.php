@@ -1,21 +1,4 @@
 <x-app-layout title="Home Page">
-    @php
-        $color = 'red';
-        $bgColor = 'blue'
-    @endphp
-    <x-card :$color :$bgColor lang="en" class="card-rounded">
-        <x-slot:title class="card-header-blue">
-            Card Title 1
-        </x-slot:title>
-        Card Content 1
-        <x-slot:footer>
-            Card Footer 1
-        </x-slot:footer>
-    </x-card>
-
-    <x-test-component lang="en" class="red">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti ipsum modi non rem voluptates? Accusantium beatae cumque dolorum eaque eligendi error, et impedit maiores natus perspiciatis quos soluta suscipit, tempore.
-    </x-test-component>
     <!-- Home Slider -->
     <section class="hero-slider">
         <!-- Carousel wrapper -->
@@ -116,6 +99,7 @@
                     @php
                         $cars = [
                             (object)[
+                                'id' => 1,
                                 'img' => 'Lexus-RX200t-2016/1.jpeg',
                                 'title' => 'BMW',
                                 'model' => 'X5',
@@ -124,6 +108,7 @@
                                 'type' => 'SUV',
                             ],
                             (object)[
+                                'id' => 1,
                                 'img' => 'Lexus-RX200t-2016/2.jpeg',
                                 'title' => 'Audi',
                                 'model' => 'A6',
@@ -132,6 +117,7 @@
                                 'type' => 'Sedan',
                             ],
                             (object)[
+                                'id' => 1,
                                 'img' => 'Lexus-RX200t-2016/3.jpeg',
                                 'title' => 'Toyota',
                                 'model' => 'Corolla',
@@ -149,8 +135,4 @@
         </section>
         <!--/ New Cars -->
     </main>
-    <x-slot:footerLinks>
-        <a href="#">Link 1</a>
-        <a href="#">Link 1</a>
-    </x-slot:footerLinks>
 </x-app-layout>
