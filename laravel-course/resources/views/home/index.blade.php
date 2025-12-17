@@ -3,6 +3,33 @@
 @section('title', 'Home Page')
 
 @section('content')
+    <x-card>
+        <x-slot:title>
+            Card Title 1
+        </x-slot:title>
+            Card Content 1
+        <x-slot:footer>
+            Card Footer 1
+        </x-slot:footer>
+    </x-card>
+    <x-card>
+        <x-slot:title>
+            Card Title 2
+        </x-slot:title>
+            Card Content 2
+        <x-slot:footer>
+            Card Footer 2
+        </x-slot:footer>
+    </x-card>
+    <x-card>
+        <x-slot:title>
+            Card Title 3
+        </x-slot:title>
+            Card Content 3
+        <x-slot:footer>
+            Card Footer 3
+        </x-slot:footer>
+    </x-card>
     <!-- Home Slider -->
     <section class="hero-slider">
         <!-- Carousel wrapper -->
@@ -12,7 +39,7 @@
                 <div class="container">
                     <div class="slide-content">
                         <h1 class="hero-slider-title">
-                            Buy <strong>The Best Cars</strong> <br />
+                            Buy <strong>The Best Cars</strong> <br/>
                             in your region
                         </h1>
                         <div class="hero-slider-content">
@@ -26,7 +53,7 @@
                         </div>
                     </div>
                     <div class="slide-image">
-                        <img src="/img/car-png-39071.png" alt="" class="img-responsive" />
+                        <img src="/img/car-png-39071.png" alt="" class="img-responsive"/>
                     </div>
                 </div>
             </div>
@@ -35,7 +62,7 @@
                 <div class="flex container">
                     <div class="slide-content">
                         <h2 class="hero-slider-title">
-                            Do you want to <br />
+                            Do you want to <br/>
                             <strong>sell your car?</strong>
                         </h2>
                         <div class="hero-slider-content">
@@ -48,7 +75,7 @@
                         </div>
                     </div>
                     <div class="slide-image">
-                        <img src="/img/car-png-39071.png" alt="" class="img-responsive" />
+                        <img src="/img/car-png-39071.png" alt="" class="img-responsive"/>
                     </div>
                 </div>
             </div>
@@ -405,10 +432,10 @@
                             </select>
                         </div>
                         <div>
-                            <input type="number" placeholder="Year From" name="year_from" />
+                            <input type="number" placeholder="Year From" name="year_from"/>
                         </div>
                         <div>
-                            <input type="number" placeholder="Year To" name="year_to" />
+                            <input type="number" placeholder="Year To" name="year_to"/>
                         </div>
                         <div>
                             <input
@@ -418,7 +445,7 @@
                             />
                         </div>
                         <div>
-                            <input type="number" placeholder="Price To" name="price_to" />
+                            <input type="number" placeholder="Price To" name="price_to"/>
                         </div>
                         <div>
                             <select name="fuel_type_id">
@@ -478,7 +505,7 @@
                             </div>
                             <h2 class="car-item-title">2016 - Lexus RX200t</h2>
                             <p class="car-item-price">$25,000</p>
-                            <hr />
+                            <hr/>
                             <p class="m-0">
                                 <span class="car-item-badge">SUV</span>
                                 <span class="car-item-badge">Electric</span>
@@ -515,7 +542,7 @@
                             </div>
                             <h2 class="car-item-title">2016 - Lexus RX200t</h2>
                             <p class="car-item-price">$25,000</p>
-                            <hr />
+                            <hr/>
                             <p class="m-0">
                                 <span class="car-item-badge">SUV</span>
                                 <span class="car-item-badge">Electric</span>
@@ -552,7 +579,7 @@
                             </div>
                             <h2 class="car-item-title">2016 - Lexus RX200t</h2>
                             <p class="car-item-price">$25,000</p>
-                            <hr />
+                            <hr/>
                             <p class="m-0">
                                 <span class="car-item-badge">SUV</span>
                                 <span class="car-item-badge">Electric</span>
@@ -589,7 +616,7 @@
                             </div>
                             <h2 class="car-item-title">2016 - Lexus RX200t</h2>
                             <p class="car-item-price">$25,000</p>
-                            <hr />
+                            <hr/>
                             <p class="m-0">
                                 <span class="car-item-badge">SUV</span>
                                 <span class="car-item-badge">Electric</span>
@@ -626,7 +653,7 @@
                             </div>
                             <h2 class="car-item-title">2016 - Lexus RX200t</h2>
                             <p class="car-item-price">$25,000</p>
-                            <hr />
+                            <hr/>
                             <p class="m-0">
                                 <span class="car-item-badge">SUV</span>
                                 <span class="car-item-badge">Electric</span>
@@ -663,7 +690,7 @@
                             </div>
                             <h2 class="car-item-title">2016 - Lexus RX200t</h2>
                             <p class="car-item-price">$25,000</p>
-                            <hr />
+                            <hr/>
                             <p class="m-0">
                                 <span class="car-item-badge">SUV</span>
                                 <span class="car-item-badge">Electric</span>
@@ -700,7 +727,7 @@
                             </div>
                             <h2 class="car-item-title">2016 - Lexus RX200t</h2>
                             <p class="car-item-price">$25,000</p>
-                            <hr />
+                            <hr/>
                             <p class="m-0">
                                 <span class="car-item-badge">SUV</span>
                                 <span class="car-item-badge">Electric</span>
@@ -737,7 +764,7 @@
                             </div>
                             <h2 class="car-item-title">2016 - Lexus RX200t</h2>
                             <p class="car-item-price">$25,000</p>
-                            <hr />
+                            <hr/>
                             <p class="m-0">
                                 <span class="car-item-badge">SUV</span>
                                 <span class="car-item-badge">Electric</span>
@@ -774,7 +801,7 @@
                             </div>
                             <h2 class="car-item-title">2016 - Lexus RX200t</h2>
                             <p class="car-item-price">$25,000</p>
-                            <hr />
+                            <hr/>
                             <p class="m-0">
                                 <span class="car-item-badge">SUV</span>
                                 <span class="car-item-badge">Electric</span>
@@ -811,7 +838,7 @@
                             </div>
                             <h2 class="car-item-title">2016 - Lexus RX200t</h2>
                             <p class="car-item-price">$25,000</p>
-                            <hr />
+                            <hr/>
                             <p class="m-0">
                                 <span class="car-item-badge">SUV</span>
                                 <span class="car-item-badge">Electric</span>
@@ -848,7 +875,7 @@
                             </div>
                             <h2 class="car-item-title">2016 - Lexus RX200t</h2>
                             <p class="car-item-price">$25,000</p>
-                            <hr />
+                            <hr/>
                             <p class="m-0">
                                 <span class="car-item-badge">SUV</span>
                                 <span class="car-item-badge">Electric</span>
@@ -885,7 +912,7 @@
                             </div>
                             <h2 class="car-item-title">2016 - Lexus RX200t</h2>
                             <p class="car-item-price">$25,000</p>
-                            <hr />
+                            <hr/>
                             <p class="m-0">
                                 <span class="car-item-badge">SUV</span>
                                 <span class="car-item-badge">Electric</span>
@@ -922,7 +949,7 @@
                             </div>
                             <h2 class="car-item-title">2016 - Lexus RX200t</h2>
                             <p class="car-item-price">$25,000</p>
-                            <hr />
+                            <hr/>
                             <p class="m-0">
                                 <span class="car-item-badge">SUV</span>
                                 <span class="car-item-badge">Electric</span>
@@ -959,7 +986,7 @@
                             </div>
                             <h2 class="car-item-title">2016 - Lexus RX200t</h2>
                             <p class="car-item-price">$25,000</p>
-                            <hr />
+                            <hr/>
                             <p class="m-0">
                                 <span class="car-item-badge">SUV</span>
                                 <span class="car-item-badge">Electric</span>
@@ -996,7 +1023,7 @@
                             </div>
                             <h2 class="car-item-title">2016 - Lexus RX200t</h2>
                             <p class="car-item-price">$25,000</p>
-                            <hr />
+                            <hr/>
                             <p class="m-0">
                                 <span class="car-item-badge">SUV</span>
                                 <span class="car-item-badge">Electric</span>
