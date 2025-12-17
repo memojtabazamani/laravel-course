@@ -132,6 +132,7 @@
       <excludeFolder url="file://$MODULE_DIR$/laravel-course/vendor/vlucas/phpdotenv" />
       <excludeFolder url="file://$MODULE_DIR$/laravel-course/vendor/voku/portable-ascii" />
       <excludeFolder url="file://$MODULE_DIR$/laravel-course/vendor/webmozart/assert" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel-course/vendor/_laravel_idea" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

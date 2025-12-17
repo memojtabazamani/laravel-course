@@ -148,6 +148,7 @@
       <path value="$PROJECT_DIR$/laravel-course/vendor/myclabs/deep-copy" />
       <path value="$PROJECT_DIR$/laravel-course/vendor/pestphp/pest-plugin" />
       <path value="$PROJECT_DIR$/laravel-course/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/laravel-course/vendor/_laravel_idea" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.2" />
