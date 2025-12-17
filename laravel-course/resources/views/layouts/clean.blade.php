@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="css/app.css" />
     <!-- <link rel="stylesheet" href="css/output.css" /> -->
 </head>
-<body>
+<body @isset($cssBodyClass) class="{{ $cssBodyClass }} " @endisset>
 
 @yield('childContent')
 
