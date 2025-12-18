@@ -1,6 +1,6 @@
 @props(['car' => []])
 <div {{ $attributes->merge()->class("car-item card") }} >
-    <a href="{{ route('car.show', $car['id']) }}">
+    <a href="{{ route('car.show', $car) }}">
         <img
                 src="/img/cars/{{$car['img']}}"
                 alt=""

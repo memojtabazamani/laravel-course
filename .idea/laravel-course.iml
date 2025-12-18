@@ -133,6 +133,9 @@
       <excludeFolder url="file://$MODULE_DIR$/laravel-course/vendor/voku/portable-ascii" />
       <excludeFolder url="file://$MODULE_DIR$/laravel-course/vendor/webmozart/assert" />
       <excludeFolder url="file://$MODULE_DIR$/laravel-course/vendor/_laravel_idea" />
+      <excludeFolder url="file://$MODULE_DIR$/.idea/dataSources" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel-course/.idea" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel-course/vendor" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
