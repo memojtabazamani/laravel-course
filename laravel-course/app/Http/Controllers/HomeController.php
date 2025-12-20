@@ -10,18 +10,31 @@ class HomeController extends Controller
 {
     public function index()
     {
-        // Select all cars
-        $cars = Car::all();
-        // Select published cards
-        $cars = Car::where('published_at', '!=', null)->get();
-
-        // Select the first car
-//        $car = Car::where('published_at', '!=', null)->first();
+//        // Select all cars
+//        $cars = Car::all();
+//        // Select published cards
+//        $cars = Car::where('published_at', '!=', null)->get();
+//        $car = Car::orderBy('created_at', 'desc')->get();
 //        dd($car);
 
-//        $car = Car::find(2);
-        $car = Car::orderBy('created_at', 'desc')->get();
-        dd($car);
-        return view('home.index');
+        $car = new Car();
+        $car->maker_id = 1;
+        $car->model_id = 1;
+        $car->year = 1;
+        $car->price = 1;
+        $car->vin = 1;
+        $car->car_type_id = 1;
+        $car->fuel_type_id = 1;
+        $car->user_id = 1;
+        $car->city_id = 1;
+        $car->address = "lorem  ";
+        $car->phone = "123";
+        $car->description = null;
+        $car->published_at = now();
+        $car->created_at = now();
+         $car->save();
+
+
+//        return view('home.index');
     }
 }
