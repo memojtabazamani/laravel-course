@@ -11,7 +11,7 @@ class Car extends Model
 {
     use HasFactory;
     use SoftDeletes;
-
+    protected $primaryKey = 'id';
     protected $fillable = [
         'maker_id',
         'model_id',

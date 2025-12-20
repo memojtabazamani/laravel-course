@@ -17,7 +17,6 @@ class FuelType extends Model
 
 //    const UPDATED_AT = 'updated_at';
     public $timestamps = false;
-    protected $fillable = [
-        'name'
-    ];
+    protected $fillable = ['name'];
+
 }
