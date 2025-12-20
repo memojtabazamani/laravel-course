@@ -13,10 +13,14 @@ class HomeController extends Controller
 //        $car = Car::find(1);
 //        $car->price = 1000;
 //        $car->save();
-        $car = new Car();
-        $car = Car::updateOrCreate([
-            'vin' => '5', 'price' => 40000
-        ], ['price' => 90000000]);
+//        $car = new Car();
+//        $car = Car::updateOrCreate([
+//            'vin' => '5', 'price' => 40000
+//        ], ['price' => 90000000]);
+
+        Car::where('published_at', null)
+            ->where('user_id', 1)
+            ->update(['published_at' => now()]);
 
         return view('home.index');
     }
