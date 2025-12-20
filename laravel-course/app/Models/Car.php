@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Testing\Fluent\Concerns\Has;
 
@@ -11,6 +12,9 @@ class Car extends Model
 {
     use HasFactory;
     use SoftDeletes;
+
+
+
     protected $primaryKey = 'id';
     protected $fillable = [
         'maker_id',
@@ -34,4 +38,9 @@ class Car extends Model
     protected $guarded = [
         'user_id',
     ];
+
+    public function features(): HasOne
+    {
+        return $this->hasOne(CarFeatures::class, 'car_id', 'id');
+    }
 }
