@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Car;
+use App\Models\CarImage;
+use App\Models\CarType;
 use App\Models\FuelType;
 use App\Models\Maker;
 use Illuminate\Http\Request;
@@ -12,18 +14,15 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $cars = Car::where('price', '>', 20000)->get();
+        $car = Car::find(1);
 
-        $maker = Maker::where('name', 'Toyota')->first();
-        $fuelType = new FuelType();
-        $fuelType->fill(['name' => 'Electric']);
-        $fuelType->save();
-        // Or:
-        // FuelType::create(['name' => 'Electric']);
+        // dd($car->carType);
 
-        Car::find(1)->update(['price' => 20000]);
+        $carType = CarType::where('name', 'Hatchback')->first();
 
-        Car::where('year', '<', 2020)->delete();
+        $cars = Car::whereBelongsTo($carType)->get();
+
+        dd($carType->cars);
 
         return view('home.index');
     }
