@@ -15,14 +15,11 @@ class HomeController extends Controller
     public function index()
     {
         $car = Car::find(1);
+        dd($car->favouriteUsers);
 
-        // dd($car->carType);
+        $user = User::find(1);
+        dd($user->favouriteCars);
 
-        $carType = CarType::where('name', 'Hatchback')->first();
-
-        $cars = Car::whereBelongsTo($carType)->get();
-
-        dd($carType->cars);
 
         return view('home.index');
     }
