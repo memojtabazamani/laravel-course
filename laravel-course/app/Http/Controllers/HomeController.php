@@ -7,7 +7,9 @@ use App\Models\CarImage;
 use App\Models\CarType;
 use App\Models\FuelType;
 use App\Models\Maker;
+use App\Models\CarModel ;
 use App\Models\User;
+use Database\Factories\MakerFactory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
 
@@ -15,12 +17,12 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $maker = Maker::factory()->count(10)->create();
-        dd($maker);
+        CarModel::factory()
+            ->count(5)
+            ->for(Maker::factory()->state([
+                'name' => 'Lexus',
+            ]));
 
-        User::factory()->count(10)->create([
-            'name' => 'Zura'
-        ]);
         return view('home.index');
     }
 }

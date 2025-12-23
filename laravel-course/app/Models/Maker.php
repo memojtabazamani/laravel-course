@@ -5,6 +5,7 @@ namespace App\Models;
 use Database\Factories\MakerFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Maker extends Model
@@ -17,7 +18,11 @@ class Maker extends Model
     ];
     public function models(): HasMany
     {
-        return $this->hasMany(Model::class);
+        return $this->hasMany(CarModel::class);
+    }
+    public function maker(): BelongsTo
+    {
+        return $this->belongsTo(Maker::class, 'maker_id');
     }
 
 }
