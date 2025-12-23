@@ -17,11 +17,10 @@ class HomeController extends Controller
 {
     public function index()
     {
+        $maker = Maker::factory()->create();
         CarModel::factory()
             ->count(5)
-            ->for(Maker::factory()->state([
-                'name' => 'Lexus',
-            ]));
+            ->for($maker);
 
         return view('home.index');
     }
