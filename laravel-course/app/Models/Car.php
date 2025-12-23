@@ -34,11 +34,40 @@ class Car extends Model
         'created_at',
         'updated_at',
     ];
-
     // Like blacklist
     protected $guarded = [
         'user_id',
     ];
+    public function carType(): BelongsTo
+    {
+        return $this->belongsTo(CarType::class);
+    }
+
+    public function fuelType(): BelongsTo
+    {
+        return $this->belongsTo(FuelType::class);
+    }
+
+    public function maker(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'maker_id');
+    }
+
+    public function model()
+    {
+        return $this->belongsTo(Model::class, 'model_id');
+    }
+
+    public function owner(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function city(): BelongsTo
+    {
+        return $this->belongsTo(City::class);
+    }
+
 
     public function features(): HasOne
     {
@@ -56,10 +85,7 @@ class Car extends Model
         return $this->hasMany(CarImage::class);
     }
 
-    public function carType(): BelongsTo
-    {
-        return $this->belongsTo(CarType::class);
-    }
+
 
     public function favouriteUsers(): BelongsToMany
     {

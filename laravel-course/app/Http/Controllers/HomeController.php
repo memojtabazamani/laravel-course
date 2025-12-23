@@ -15,16 +15,12 @@ class HomeController extends Controller
 {
     public function index()
     {
-//        $car = Car::find(1);
-//        dd($car->favouriteUsers);
+        $maker = Maker::factory()->count(10)->create();
+        dd($maker);
 
-//        $user = User::find(1);
-//        dd($user->favouriteCars);
-
-        $user = User::find(1);
-        $user->favouriteCars()->attach([1, 14]);
-
-
+        User::factory()->count(10)->create([
+            'name' => 'Zura'
+        ]);
         return view('home.index');
     }
 }
