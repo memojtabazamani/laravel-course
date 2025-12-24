@@ -17,10 +17,15 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $maker = Maker::factory()->create();
-        CarModel::factory()
-            ->count(5)
-            ->for($maker);
+//        $maker = Maker::factory()->create();
+//        CarModel::factory()
+//            ->count(5)
+//            ->for($maker);
+
+        User::factory()
+            ->has(Car::Factory()->count(5), 'favouriteCars')
+            ->hasAttached(Car::Factory()->count(5), ['col' => 'va'] , 'favouriteCars')
+            ->create();
 
         return view('home.index');
     }

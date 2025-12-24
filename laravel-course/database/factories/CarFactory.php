@@ -24,8 +24,7 @@ class CarFactory extends Factory
             'maker_id' => Maker::inRandomOrder()->first()->id,
             // IMPORTANT: model must belong to the same maker
             'model_id' => function (array $attributes) {
-              return CarModel::where('maker_id', $attributes['maker_id'])
-                  ->inRandomOrder()->first()->id;
+              return CarModel::find($attributes['maker_id'])->id;
             },
             'year' => $this->faker->numberBetween(1995, now()->year),
             'price' => $this->faker->numberBetween(3_000, 120_000),
