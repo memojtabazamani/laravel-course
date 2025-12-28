@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\CarType;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -9,6 +10,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class CarTypeFactory extends Factory
 {
+    protected $model = CarType::class;
     /**
      * Define the model's default state.
      *

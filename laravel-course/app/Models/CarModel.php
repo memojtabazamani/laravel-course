@@ -9,8 +9,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class CarModel extends Model
 {
-    protected $table = 'models';
     use HasFactory;
+    protected $table = 'models';
     public $timestamps = false;
     protected $fillable = [
         'name', 'maker_id'
@@ -23,6 +23,6 @@ class CarModel extends Model
 
     public function maker(): BelongsTo
     {
-        return $this->belongsTo(Maker::class, 'maker_id');
+        return $this->belongsTo(Maker::class, );
     }
 }

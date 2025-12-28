@@ -38,31 +38,34 @@ class DatabaseSeeder extends Seeder
         ];
 
         //foreach ($types as $type) {
-        CarType::factory()->sequence([
-            ['name' => 'Sedan'],
-            ['name' => 'SUV'],
-            ['name' => 'Truck'],
-            ['name' => 'Coupe'],
-            ['name' => 'Pride'],
-            ['name' => 'Jeep'],
-            ['name' => 'Crossover'],
-            ['name' => 'Sports Car'],
-        ])
-            ->count(9)
+        CarType::factory()
+            ->count(8)
+            ->sequence(
+                ['name' => 'Sedan'],
+                ['name' => 'SUV'],
+                ['name' => 'Truck'],
+                ['name' => 'Coupe'],
+                ['name' => 'Pride'],
+                ['name' => 'Jeep'],
+                ['name' => 'Crossover'],
+                ['name' => 'Sports Car'],
+            )
             ->create();
-        // }
+
 
         // ==== Fuel Types ==== //
         $fuelTypes = ['Gas', 'Diesel', 'Electricity', 'Water Supply'];
         //foreach ($fuelTypes as $type) {
-        FuelType::factory()->sequence([
-            ['name' => 'Gas',],
-            ['name' => 'Diesel',],
-            ['name' => 'Electricity',],
-            ['name' => 'Water Supply',],
-        ])
+        FuelType::factory()
             ->count(4)
+            ->sequence(
+                ['name' => 'Gas'],
+                ['name' => 'Diesel'],
+                ['name' => 'Electricity'],
+                ['name' => 'Water Supply'],
+            )
             ->create();
+
         //}
         // ==== Cities and states ==== //
         $states = [
@@ -146,13 +149,13 @@ class DatabaseSeeder extends Seeder
 
         foreach ($states as $state => $cities) {
             State::factory()
-                ->state([
-                    'name' => $state,
-                ])
+                ->state(['name' => $state])
                 ->has(
-                    City::Factory()
+                    City::factory()
                         ->count(count($cities))
-                        ->sequence(array_map(fn($city) => ['name' => $city], $cities))
+                        ->state(new Sequence(
+                            ...array_map(fn ($city) => ['name' => $city], $cities)
+                        ))
                 )
                 ->create();
         }
@@ -248,18 +251,20 @@ class DatabaseSeeder extends Seeder
             ],
         ];
 
-        foreach ($makers as $maker => $models) {
-            Maker::factory()
-                ->state([
-                    'name' => $maker,
-                ])->has(
-                    CarModel::factory()
-                        ->count(count($models))
-                        ->sequence(array_map(fn($model) => ['name' => $model], $models))
-                )
-                ->create();
-        }
+        foreach ($makers as $makerName => $models) {
+//            // Create the maker
+            $maker = Maker::factory()->create([
+                'name' => $makerName,
+            ]);
 
+            // Create each model for this maker
+            foreach ($models as $modelName) {
+                CarModel::factory()->create([
+                    'name' => $modelName,
+                    'maker_id' => $maker->id, // Must be CarModel table
+                ]);
+            }
+        }
         // ==== Create users ==== //
         User::factory()
             ->count(3)
@@ -272,8 +277,10 @@ class DatabaseSeeder extends Seeder
                 ->has(
                     CarImage::factory()
                     ->count(5)
-                    ->sequence(fn(Sequence $sequence) => ['position' => $sequence], $images)
-                ),
+                    ->sequence(fn(Sequence $sequence) => ['position' => $sequence->index % 5 + 1]),
+                    'images'
+                )
+                ->hasFeatures(),
                 'favouriteCars'
             )
             ->create();

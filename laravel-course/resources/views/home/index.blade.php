@@ -96,39 +96,8 @@
             <div class="container">
                 <h2>Latest Added Cars</h2>
                 <div class="car-items-listing">
-                    @php
-                        $cars = [
-                            (object)[
-                                'id' => 1,
-                                'img' => 'Lexus-RX200t-2016/1.jpeg',
-                                'title' => 'BMW',
-                                'model' => 'X5',
-                                'price' => '$45,000',
-                                'madeFrom' => 'Germany',
-                                'type' => 'SUV',
-                            ],
-                            (object)[
-                                'id' => 1,
-                                'img' => 'Lexus-RX200t-2016/2.jpeg',
-                                'title' => 'Audi',
-                                'model' => 'A6',
-                                'price' => '$38,000',
-                                'madeFrom' => 'Germany',
-                                'type' => 'Sedan',
-                            ],
-                            (object)[
-                                'id' => 1,
-                                'img' => 'Lexus-RX200t-2016/3.jpeg',
-                                'title' => 'Toyota',
-                                'model' => 'Corolla',
-                                'price' => '$22,000',
-                                'madeFrom' => 'Japan',
-                                'type' => 'Sedan',
-                            ],
-                        ];
-                    @endphp
                     @foreach ($cars as $car)
-                        <x-car-item :car="(array)$car" />
+                        <x-car-item :car="$car" />
                     @endforeach
                 </div>
             </div>

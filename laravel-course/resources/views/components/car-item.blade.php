@@ -1,15 +1,15 @@
-@props(['car' => []])
+@props(['car'])
 <div {{ $attributes->merge()->class("car-item card") }} >
-    <a href="{{ route('car.show', $car['id']) }}">
+    <a href="{{ route('car.show', $car->id) }}">
         <img
-                src="/img/cars/{{$car['img']}}"
+                src="{{$car->primaryImage->image_path}}"
                 alt=""
                 class="car-item-img rounded-t"
         />
     </a>
     <div class="p-medium">
         <div class="flex items-center justify-between">
-            <small class="m-0 text-muted">{{$car['title']}}</small>
+            <small class="m-0 text-muted">{{$car->city->name}}</small>
             <button class="btn-heart">
                 <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -27,12 +27,12 @@
                 </svg>
             </button>
         </div>
-        <h2 class="car-item-title">{{$car['model']}} - {{$car['title']}}</h2>
-        <p class="car-item-price">{{$car['price']}}</p>
+        <h2 class="car-item-title">{{$car->year}} - {{ $car->maker->name }} {{ $car->model->name }}</h2>
+        <p class="car-item-price">{{$car->price}}</p>
         <hr/>
         <p class="m-0">
-            <span class="car-item-badge">{{$car['madeFrom']}}</span>
-            <span class="car-item-badge">{{$car['type']}}</span>
+            <span class="car-item-badge">{{$car->carType->name}}</span>
+            <span class="car-item-badge">{{$car->fuelType->name}}</span>
         </p>
     </div>
 </div>

@@ -50,10 +50,10 @@ class Car extends Model
 
     public function maker(): BelongsTo
     {
-        return $this->belongsTo(User::class, 'maker_id');
+        return $this->belongsTo(Maker::class);
     }
 
-    public function model()
+    public function model(): BelongsTo
     {
         return $this->belongsTo(CarModel::class, 'model_id');
     }
@@ -84,8 +84,6 @@ class Car extends Model
     {
         return $this->hasMany(CarImage::class);
     }
-
-
 
     public function favouriteUsers(): BelongsToMany
     {

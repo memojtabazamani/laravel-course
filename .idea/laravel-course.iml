@@ -136,6 +136,8 @@
       <excludeFolder url="file://$MODULE_DIR$/.idea/dataSources" />
       <excludeFolder url="file://$MODULE_DIR$/laravel-course/.idea" />
       <excludeFolder url="file://$MODULE_DIR$/laravel-course/vendor" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel-course/storage/app" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel-course/storage/framework" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
