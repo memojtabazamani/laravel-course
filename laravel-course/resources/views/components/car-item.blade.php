@@ -1,4 +1,4 @@
-@props(['car'])
+@props(['car', 'isInWatchlist' => false])
 <div {{ $attributes->merge()->class("car-item card") }} >
     <a href="{{ route('car.show', $car->id) }}">
         <img
@@ -10,10 +10,11 @@
     <div class="p-medium">
         <div class="flex items-center justify-between">
             <small class="m-0 text-muted">{{$car->city->name}}</small>
-            <button class="btn-heart text-primary">
+            <button class="btn-heart {{ $isInWatchlist ? 'text-primary' : '' }} ">
                 <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 24 24"
+                        stroke-width="1.5"
                         fill="currentColor"
                         style="width: 16px"
                 >
